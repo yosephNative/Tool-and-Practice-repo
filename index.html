@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool Assignment</title>
+<style>
+  body {
+   
+  background-image: url(background.jpg);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures the background image is not movable */
+    color: #fff; /* Default text color */
+  }
+  header {
+    font-family: 'Algerian', sans-serif; /* Changed font to 'Algerian' */
+    color: #e3d2c1;
+    padding: 20px;
+    text-align: center;
+  }
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background-color: rgba(55, 151, 203, 0.484);
+    padding-top: 50px;
+  }
+  .sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .sidebar a:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: orange;
+  }
+  .container {
+    margin-left: 200px; /* Adjusted to accommodate sidebar width */
+    padding: 20px; /* Added padding for better spacing */
+  }
+  .content {
+    background-color:rgba(255, 255, 255, 0.149);
+    border-radius: 10px;
+    padding: 20px; /* Added padding for better spacing */
+    position: relative; /* Added relative positioning */
+  }
+  .slideshow {
+    display: flex;
+    overflow-x: hidden;
+    position: relative;
+  }
+  .slideshow-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  p{
+    color: #e0862b;
+  }
+  .slide {
+    
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  .nav-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    z-index: 1;
+  }
+  .nav-arrows:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .nav-arrows.left {
+    left: 10px;
+  }
+  .nav-arrows.right {
+    right: 10px;
+  }
+  button{
+    color: #4427d3;
+    margin-top: 100px;
+    padding: 15px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Yoseph's Portfolio</h1>
+</header>
+<div class="sidebar">
+  <a href="#" id="home">Home</a>
+  <a href="#" id="about">About</a>
+  <a href="#" id="studentInfo">Student Information</a>
+</div>
+<div class="container">
+  <div class="content">
+    <div id="homePage" style="display:block;">
+      <div class="slideshow">
+        <div class="slideshow-container">
+          <div class="slide">
+            <h2>Introdcution</h2>
+           <h1> Portfolio:</h1> 
+             <p >  Welcome to my website!
+              Here, you'll find  information about me. if you  want to connect with me . <br>
+              Feel free to reach out to me via email which is  down  below. I look forward to hearing from you!<br>
+              Best regards, <br>
+              yoseph. 
+            <p></p>
+          </div>
+         
+          
+        
+        </div>
+        <!--<div class="nav-arrows left" onclick="slide('left')">&#10094;</div>
+        <div class="nav-arrows right" onclick="slide('right')">&#10095;</div>-->
+      </div>
+    </div>
+    <div id="aboutPage" style="display:none;">
+      <h2>About </h2>
+   
+ <p>   
+Hi
+I am yoseph,  with a fervent interest in technology, hailing from Bahirdar.<br>
+I am currently engaged in the dynamic field of app development, driven by a lifelong fascination with the transformative power of technology.<br><br>
+From my earliest days, I have been captivated by the potential of technology to address real-world challenges.<br>
+Today, I am dedicated to harnessing this potential through the creation of innovative applications.<br><br>
+Thank you for your visit.<br><br>
+kind regards,<br>
+yoseph. 
+</p>  
+    </div>
+    <div id="studentInformation" style="display:none;">
+      <h2>Student Information</h2>
+      <ol>
+        <li>Name: &ensp;&ensp; Yoseph Birhanu</li>
+        <li>ID: &ensp;&ensp;&ensp;&ensp;&ensp;BDU1404237</li>
+      </ol>
+    </div>
+    <div id="initialMessage">
+      <p>Welcome to my simple website! Click on the sidebar links to explore.</p>
+      
+    </div>
+  </div>
+</div>
+<script>
+
+  document.getElementById("home").addEventListener("click", function(event) {
+    event.preventDefault();
+    hideAllPages();
+    document.getElementById("homePage").style.display = "block";
+  });
+
+  document.getElementById("about").addEventListener("click", function(event) {
+    event.preventDefault();
+    hideAllPages();
+    document.getElementById("aboutPage").style.display = "block";
+  });
+
+  document.getElementById("studentInfo").addEventListener("click", function(event) {
+    event.preventDefault();
+    hideAllPages();
+    document.getElementById("studentInformation").style.display = "block";
+  });
+
+  function hideAllPages() {
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("aboutPage").style.display = "none";
+    document.getElementById("studentInformation").style.display = "none";
+    document.getElementById("initialMessage").style.display = "none";
+  }
+</script>
+</body>
+</html>
